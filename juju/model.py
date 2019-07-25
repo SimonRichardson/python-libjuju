@@ -1930,8 +1930,8 @@ class Model:
             offer.user = self.info.username
             endpoint = offer.string()
 
-        source = self._get_source_api(offer)
-        consume_details = source.get_consume_details(offer.as_local().string())
+        source = await self._get_source_api(offer)
+        consume_details = await source.get_consume_details(offer.as_local().string())
         offer_url = parse_offer_url(consume_details["offer"].offer_url)
         offer_url.source = offer.source
         consume_details["offer"].offer_url = offer_url.string()
