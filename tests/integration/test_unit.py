@@ -14,7 +14,7 @@ async def test_run(event_loop):
 
     async with base.CleanModel() as model:
         app = await model.deploy(
-            'ubuntu-0',
+            'cs:ubuntu-0',
             application_name='ubuntu',
             series='trusty',
             channel='stable',
